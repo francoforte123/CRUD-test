@@ -1,0 +1,51 @@
+server:
+  port: 8080
+spring:
+  profiles: development
+  datasource:
+    url: jdbc:mysql://localhost:3306/devdb
+    username: developer
+    password: developer
+  jpa:
+    database: mysql
+    show_sql: true
+    hibernate:
+      ddl-auto: create-drop
+      mail:
+        host: smtp.gmail.com
+        port: 600
+        username: vtwuw13@gmail.com
+        password: ghatrgbrhal
+        properties:
+          mail:
+            smtp:
+              auth: true
+              starttls:
+                enable: true
+
+---
+environments: test
+server:
+  port: 3030
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: root
+    password: dante123
+  jpa:
+    database: mysql
+    show_sql: true
+    hibernate:
+      ddl-auto: create-drop
+  mail:
+    host: smtp.gmail.com
+    port: 600
+    username: vtwuw13@gmail.com
+    password: ghatrgbrhal
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
